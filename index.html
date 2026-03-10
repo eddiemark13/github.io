@@ -2,15 +2,20 @@
 <html>
 <head>
 <title>A Birthday Surprise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 .photos{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
 margin-top:20px;
+}
+
+.polaroid img{
+width:100%;
+border-radius:10px;
 }
 
 .polaroid{
@@ -41,21 +46,24 @@ overflow:auto;
 
 .box{
 background:white;
-padding:30px;
+padding:25px;
 border-radius:20px;
-max-width:520px;
+max-width:420px;
+width:90%;
 margin:auto;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
 
 button{
-padding:12px 20px;
+padding:14px 20px;
 border:none;
 border-radius:12px;
 background:#8fd3ff;
 font-size:16px;
 cursor:pointer;
 margin:10px;
+width:80%;
+max-width:250px;
 }
 
 button:hover{
@@ -231,6 +239,7 @@ setInterval(createHeart,500);
 
 </body>
 </html>
+
 
 
 
