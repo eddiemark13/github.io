@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>A Small Birthday Surprise</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(#e6f7ff,#ffffff);
+text-align:center;
+padding:40px;
+overflow:hidden;
+}
+
+.box{
+background:white;
+padding:30px;
+border-radius:20px;
+max-width:520px;
+margin:auto;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+button{
+padding:12px 20px;
+border:none;
+border-radius:12px;
+background:#8fd3ff;
+font-size:16px;
+cursor:pointer;
+margin:10px;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+input{
+padding:10px;
+border-radius:10px;
+border:1px solid #ccc;
+width:80%;
+margin-top:10px;
+}
+
+h1{
+color:#4da6d9;
+}
+
+.hearts{
+position:fixed;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="slide1" class="box">
+<h1>Hi ☁️</h1>
+
+<img src="https://upload.wikimedia.org/wikipedia/en/9/9e/Cinnamoroll.png" width="120">
+
+<p>I made a tiny birthday thing for you.</p>
+<p>Ready to go through it? 🎂</p>
+
+<button onclick="next(1)">Start</button>
+</div>
+
+
+<div id="slide2" class="box" style="display:none">
+<h1>Question 1</h1>
+<p>What nickname should I call you?</p>
+
+<input>
+
+<br>
+<button onclick="next(2)">Next</button>
+</div>
+
+
+<div id="slide3" class="box" style="display:none">
+<h1>Question 2</h1>
+<p>What's something that always cheers you up?</p>
+
+<input>
+
+<br>
+<button onclick="next(3)">Next</button>
+</div>
+
+
+<div id="slide4" class="box" style="display:none">
+<h1>Question 3</h1>
+<p>If today could be a perfect day, what would you do?</p>
+
+<input>
+
+<br>
+<button onclick="next(4)">Next</button>
+</div>
+
+
+<div id="slide5" class="box" style="display:none">
+<h1>Fun Question 😆</h1>
+<p>Do you like Cinnamoroll?</p>
+
+<button onclick="next(5)">Yes ☁️</button>
+<button id="noBtn">No</button>
+
+</div>
+
+
+<div id="slide6" class="box" style="display:none">
+
+<h1>🎂 Happy Birthday 🎂</h1>
+
+<p>I just wanted to wish you a really great birthday.</p>
+
+<p>I hope today is full of good food, fun moments, and lots of things that make you smile.</p>
+
+<p>You deserve a really good year ahead.</p>
+
+<p>Also, may there be plenty of Cinnamoroll moments ☁️</p>
+
+<p>Enjoy your day!</p>
+
+</div>
+
+
+<script>
+
+function next(num){
+document.getElementById("slide"+num).style.display="none";
+document.getElementById("slide"+(num+1)).style.display="block";
+}
+
+
+let noBtn = document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover",function(){
+noBtn.style.position="absolute";
+noBtn.style.left=Math.random()*80+"%";
+noBtn.style.top=Math.random()*80+"%";
+});
+
+
+function createHeart(){
+
+let heart=document.createElement("div");
+heart.className="hearts";
+heart.innerHTML="💙";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove()},6000);
+
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
